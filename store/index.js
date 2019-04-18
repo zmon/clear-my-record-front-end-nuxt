@@ -165,7 +165,7 @@ const store = () => new Vuex.Store({
         },
         async getClientIntake({commit}, client_id) {
             console.log('getClientIntake');
-            await this.$axios.get('http://public.test/api/clients/' + client_id)
+            await this.$axios.get('/api/clients/' + client_id)
                 .then((res) => {
                     if (res.status === 200) {
                         console.log(res);
@@ -177,7 +177,7 @@ const store = () => new Vuex.Store({
         },
         async addClientInfo({commit}, data) {
             console.log('addClientInfo -----');
-            await this.$axios.post('http://public.test/api/clients',data)
+            await this.$axios.post('/api/clients',data)
                 .then((res) => {
                     if (res.status === 201) {
                         console.log(res);
@@ -190,7 +190,7 @@ const store = () => new Vuex.Store({
         async updateClientInfo({commit}, data) {
             console.log('updateClientInfo -----');
 
-            await this.$axios.patch('http://public.test/api/clients/'+data.id,data)
+            await this.$axios.patch('/api/clients/'+data.id,data)
                 .then((res) => {
                     if (res.status === 200) {
                         console.log(res);
